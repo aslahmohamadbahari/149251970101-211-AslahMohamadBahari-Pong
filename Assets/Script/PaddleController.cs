@@ -25,8 +25,6 @@ public class PaddleController : MonoBehaviour
 
     private Vector2 getInput()
     {
-        Vector2 Movement = Vector2.zero;
-
         if (Input.GetKey(upKey))
         {
             return Vector2.up * speed;
@@ -42,6 +40,7 @@ public class PaddleController : MonoBehaviour
     private void Movement (Vector2 Movement)
     {
         Rig.velocity = Movement;
+        Debug.Log("Position : " + Movement);
     }
 
 }
