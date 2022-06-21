@@ -7,6 +7,8 @@ public class BallController : MonoBehaviour
     public Vector2 speed;
     private Rigidbody2D Rig;
     public Vector2 resetPosition;
+    int normal = 2; 
+    //private int timerPUSPeedBall; 
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +18,6 @@ public class BallController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //transform.Translate(speed * Time.deltaTime);
-    }
 
     public void ResetBall()
     {
@@ -30,5 +28,4 @@ public class BallController : MonoBehaviour
     {
         Rig.velocity *= Magnitude;
     }
-
 }

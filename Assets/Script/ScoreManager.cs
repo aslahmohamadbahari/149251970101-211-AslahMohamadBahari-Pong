@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     public int scoreKiri;
     public int scoreKanan;
     public int maxScore;
-
     public void addRightScore(int increment)
     {
         Ball.ResetBall();
@@ -30,7 +29,6 @@ public class ScoreManager : MonoBehaviour
             gameOver();
         }
     }
-
     public void gameOver()
     {
         SceneManager.LoadScene("Menu");

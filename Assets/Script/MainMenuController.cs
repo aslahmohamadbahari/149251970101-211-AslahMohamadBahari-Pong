@@ -10,9 +10,12 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Game");
         Debug.Log("149251970101-211-Aslah Mohamad Bahari");
     }
-
-    public void Author()
+    public void backToMenu()
     {
-        Debug.Log("149251970101-211-Aslah Mohamad Bahari");
+        SceneManager.LoadScene("Menu");
+    }
+    public void creadiScene()
+    {
+        SceneManager.LoadScene("CreaditScene");
     }
 }

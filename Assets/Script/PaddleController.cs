@@ -8,8 +8,9 @@ public class PaddleController : MonoBehaviour
     public int speed;
     public KeyCode upKey;
     public KeyCode downKey;
-
+    int normal = 5;
     private Rigidbody2D Rig;
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +42,25 @@ public class PaddleController : MonoBehaviour
     {
         Rig.velocity = Movement;
     }
-
+    public void activePUSpeedPaddle(float Magnitude)
+    {
+        Rig.velocity *= Magnitude;
+    }
+    public void PUSpeedPaddle()
+    {
+        speed += 1;
+        StartCoroutine(intervalBuffPowerUp());
+    }
+    public void PUScalePaddle()
+    {
+        transform.localScale = new Vector2(0.3f, 5);
+        StartCoroutine(intervalBuffPowerUp());
+    }
+    IEnumerator intervalBuffPowerUp()
+    {
+        yield return new WaitForSeconds(normal);
+        speed = 4;
+        transform.localScale = new Vector2(0.3f, 2.5f);
+        StartCoroutine(intervalBuffPowerUp());
+    }
 }

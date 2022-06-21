@@ -31,6 +31,7 @@ public class PowerUpManager : MonoBehaviour
         }
     }
 
+    // Posisi Random Buff
     public void viewGenerateRandomPowerUp()
     {
         GenerateRandomPowerUp(new Vector2(Random.Range(powerUpAreaMin.x, powerUpAreaMax.x), Random.Range(powerUpAreaMin.y, powerUpAreaMax.y)));
@@ -62,13 +63,9 @@ public class PowerUpManager : MonoBehaviour
 
         powerUpList.Add(powerUp);
     }
+    // ==========================
 
-    public void RemovePowerUp(GameObject powerUp)
-    {
-        powerUpList.Remove(powerUp);
-        Destroy(powerUp);
-    }
-
+    // Remove GameObject
     public void RemoveAllPowerUp()
     {
         while (powerUpList.Count > 0)
@@ -76,5 +73,10 @@ public class PowerUpManager : MonoBehaviour
             RemovePowerUp(powerUpList[0]);
         }
     }
-
+    public void RemovePowerUp(GameObject powerUp)
+    {
+        powerUpList.Remove(powerUp);
+        Destroy(powerUp);
+    }
+    // ==========================
 }
